@@ -1,0 +1,1 @@
+{"version":3,"sources":["src/map.ts"],"names":[],"mappings":";;;;;;AAAA,SAAgB,OAAO,GAAA;EACnB,OAAO,CAAC,GAAG,CAAC,aAAa,CAAC;AAC9B;AAFA,OAAA,CAAA,OAAA,GAAA,OAAA","file":"map.2419f97e.js","sourceRoot":"..","sourcesContent":["export function initMap() {\r\n    console.log(\"Map loaded!\");\r\n}\r\n"]}

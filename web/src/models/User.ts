@@ -2,6 +2,7 @@ import { Model } from "./Model";
 import { Attributes } from "./Attributes";
 import { ApiSync } from "./ApiSync";
 import { Eventing } from "./Eventing";
+import { Collection } from "./Collection";
 
 export interface UserProps {
     id?: number;
@@ -9,7 +10,7 @@ export interface UserProps {
     age?: number;
 }
 
-const rooturl = "http://localhost:3000/users";
+export const rooturl = "http://localhost:3000/users";
 
 export class User extends Model<UserProps> {
     static buildUser(attrs: UserProps): User {
@@ -18,5 +19,17 @@ export class User extends Model<UserProps> {
             new Eventing(),
             new ApiSync<UserProps>(rooturl)
         );
+    }
+
+    static buildUserCollection(): Collection<User, UserProps> {
+        return new Collection<User, UserProps>(rooturl, (json: UserProps) =>
+            User.buildUser(json)
+        );
+    }
+
+    setRandomAge(): void {
+        const age = Math.round(Math.random() * 100);
+
+        this.set({ age });
     }
 }

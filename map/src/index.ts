@@ -2,9 +2,6 @@ import { User } from "./User";
 import { Company } from "./Company";
 import { CustomMap } from "./CustomMap";
 
-// function initMap() {
-//     console.log("Map loaded!");
-// }
 const user = new User();
 const company = new Company();
 const map = new CustomMap("map");

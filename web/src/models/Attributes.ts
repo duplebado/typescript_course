@@ -10,6 +10,6 @@ export class Attributes<T extends object> {
     }
 
     getAll(): T {
-        return this.data["id"];
+        return this.data;
     }
 }
